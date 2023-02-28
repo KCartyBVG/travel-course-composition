@@ -26,21 +26,20 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import sourceData from '@/data.json'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import GoBack from '@/components/GoBack.vue'
-export default {
-    components:{ExperienceCard, GoBack},
-    props:{
+import {computed} from 'vue'
+
+    const props = defineProps({
         id: {type: Number, required: true}
-    },
-    computed:{
-        destination() {
-            return sourceData.destinations.find(
-                (destination) => destination.id === this.id
-            );
-        }
-    }
-}
+    })
+
+    const destination = computed(() => {
+        return sourceData.destinations.find(
+            (destination) => destination.id === props.id
+        )
+    })
+
 </script>

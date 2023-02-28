@@ -9,11 +9,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
   import TheNavigation from '@/components/TheNavigation.vue'
-  export default{
-    components: {TheNavigation}
-  }
 </script>
 <style lang="css">
 

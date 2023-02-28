@@ -13,13 +13,12 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import sourceData from '@/data.json'
-export default{
-    data(){
-        return {
-            destinations: sourceData.destinations
-        }
-    }
-}
+import {ref} from 'vue'
+
+    const destinations = ref(sourceData.destinations)
+    
+    
+
 </script>

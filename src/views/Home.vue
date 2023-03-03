@@ -16,9 +16,5 @@
 <script setup>
 import sourceData from '@/data.json'
 import {ref} from 'vue'
-
     const destinations = ref(sourceData.destinations)
-    
-    
-
 </script>

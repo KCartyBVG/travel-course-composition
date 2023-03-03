@@ -1,5 +1,5 @@
 <template>
-    <section>
+     <section>
         <h1>{{ experience.name }}</h1>
         <img :src="`/images/${experience.image}`" :alt="experience.name">
         <p>{{ experience.description }}</p>
@@ -16,15 +16,19 @@
         })
 
         const destination = computed(() =>{
-            return sourceData.destinations.find(
+            const dest =  sourceData.destinations.find(
                 destination => destination.id === props.id
             )
+            return dest
         })
         
         const experience = computed(() => {
-            return props.destination.experiences.find(
+            console.log(destination)
+           if (destination !== undefined){
+            return destination.value.experiences.find(
                 experience => experience.slug === props.experienceSlug
             )
+           }
         })
         
     

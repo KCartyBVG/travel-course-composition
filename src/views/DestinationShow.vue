@@ -16,6 +16,7 @@
                     :key="experience.slug"
                     :to="{name: 'experience.show', params:{experienceSlug: experience.slug}}"
                 >
+                <!-- check the params it should math the link in the children -->
                     <ExperienceCard
                         :experience="experience"
                     />
@@ -37,9 +38,10 @@ import {computed} from 'vue'
     })
 
     const destination = computed(() => {
-        return sourceData.destinations.find(
+        const dest = sourceData.destinations.find(
             (destination) => destination.id === props.id
         )
+        return dest
     })
 
 </script>
